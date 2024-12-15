@@ -1,0 +1,77 @@
+/*
+* cpp-terminal
+* C++ library for writing multi-platform terminal applications.
+*
+* SPDX-FileCopyrightText: 2019-2024 cpp-terminal
+*
+* SPDX-License-Identifier: MIT
+*/
+
+#include "cpp-terminal/cursor.hpp"
+
+#include "file_initializer.hpp"
+
+#if defined(_WIN32)
+  #pragma warning(push)
+  #pragma warning(disable : 4668)
+  #include <windows.h>
+  #pragma warning(pop)
+#else
+  #include <sys/ioctl.h>
+  #include <termios.h>
+#endif
+
+#include "cpp-terminal/private/file.hpp"
+
+Term::Cursor Term::cursor_position()
+{
+  static const Term::Private::FileInitializer files_init;
+  if(Term::Private::in.null()) { return {}; }
+#if defined(_WIN32)
+  CONSOLE_SCREEN_BUFFER_INFO inf;
+  if(GetConsoleScreenBufferInfo(Private::out.handle(), &inf)) return Term::Cursor({Row(inf.dwCursorPosition.Y + 1), Column(inf.dwCursorPosition.X + 1)});
+  else
+    return {};
+#else
+  std::string ret;
+  std::size_t nread{0};
+  Term::Private::in.lockIO();
+  // Hack to be sure we can do this all the time "Cooked" or "Raw" mode
+  ::termios actual;
+  if(!Private::out.null())
+  {
+    if(tcgetattr(Private::out.fd(), &actual) == -1) { return {}; }
+  }
+  ::termios raw = actual;
+  // Put terminal in raw mode
+  raw.c_iflag &= ~(BRKINT | ICRNL | INPCK | ISTRIP | IXON);
+  // This disables output post-processing, requiring explicit \r\n. We
+  // keep it enabled, so that in C++, one can still just use std::endl
+  // for EOL instead of "\r\n".
+  // raw.c_oflag &= ~(OPOST);
+  raw.c_lflag &= ~(ECHO | ICANON | IEXTEN);
+  raw.c_lflag &= ~ISIG;
+  raw.c_cc[VMIN]  = 1;
+  raw.c_cc[VTIME] = 0;
+  if(!Private::out.null()) tcsetattr(Private::out.fd(), TCSAFLUSH, &raw);
+  Term::Private::out.write(Term::cursor_position_report());
+  while(nread == 0) { ::ioctl(Private::in.fd(), FIONREAD, &nread); }
+  ret = Term::Private::in.read();
+  tcsetattr(Private::out.fd(), TCSAFLUSH, &actual);
+  Term::Private::in.unlockIO();
+  try
+  {
+    if(ret[0] == '\033' && ret[1] == '[' && ret[ret.size() - 1] == 'R')
+    {
+      std::size_t found = ret.find(';', 2);
+      if(found != std::string::npos) { return Cursor({Row(std::stoi(ret.substr(2, found - 2))), Column(std::stoi(ret.substr(found + 1, ret.size() - (found + 2))))}); }
+      return {};
+    }
+    return {};
+  }
+  catch(...)
+  {
+    return {};
+  }
+#endif
+}
