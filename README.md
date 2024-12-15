@@ -18,6 +18,9 @@ git clone https://github.com/Mq-b/CXX_LIB
 
 然后定义变量 `CMAKE_PREFIX_PATH` ，值为仓库的路径，它是用来设置 CMake 查找包路径的。
 
+> [!TIP]
+> 建议将该变量定义在全局环境中，而非 `CMakeLists.txt` 文件中。这种方式更通用，便于开发者根据需要自行决定库的路径，避免硬编码路径的问题（例如和同事共享）。
+
 可以定义在全局环境变量，或者是在 CMakeList.txt 中定义：
 
 ```cmake
@@ -59,12 +62,49 @@ target_link_libraries(${PROJECT_NAME} PRIVATE GTest::GTest)
 
 有些库还需设置 `bin` 环境变量或者直接将 `dll` 复制过来，因为是动态链接库，这不是 CMake 管理的。
 
-## 相关库链接
+## 相关库介绍
 
-- [cpp-terminal](https://github.com/jupyter-xeus/cpp-terminal)  
-- [fmt](https://github.com/fmtlib/fmt)  
-- [GTest](https://github.com/google/googletest)  
-- [nlohmann_json](https://github.com/nlohmann/json)  
-- [TBB](https://github.com/oneapi-src/oneTBB)  
-- [sfml](https://github.com/SFML/SFML)  
-- [spdlog](https://github.com/gabime/spdlog)  
+- [**cpp-terminal**](https://github.com/jupyter-xeus/cpp-terminal)
+
+  用于构建跨平台的终端应用程序，支持终端输入输出控制（如颜色、光标控制，终端绘制图形）。
+
+  **特点**：现代 C++ 风格，简单易用，适用于需要与终端交互的应用。
+  
+- [**fmt**](https://github.com/fmtlib/fmt)
+
+  跨平台的现代高效的字符串格式化库。
+  
+  **特点**：支持类型安全的格式化，性能高，易于使用，广泛应用于 C++ 项目中。
+
+- [**GTest**](https://github.com/google/googletest)
+
+  Google 提供的跨平台 C++ 测试框架，用于单元测试。
+
+  **特点**：简洁的 API，支持断言和 Mock 测试，广泛用于自动化测试。
+
+- [**nlohmann_json**](https://github.com/nlohmann/json)
+
+  现代的跨平台 C++ JSON 解析与序列化库。
+
+  **特点**：提供 STL 容器风格的接口，易于使用，支持完整的 JSON 操作。
+
+- [**TBB**](https://github.com/oneapi-src/oneTBB)
+
+  Intel 提供的跨平台并行编程库，帮助开发高性能多线程应用。
+
+  **特点**：支持任务调度、并行算法，适合多核计算和高性能计算应用。
+
+- [**sfml**](https://github.com/SFML/SFML)
+
+  用于 2D 图形、音频和窗口处理的跨平台多媒体库。
+
+  **特点**：易于使用，适合开发游戏或其他图形和多媒体应用。
+
+- [**spdlog**](https://github.com/gabime/spdlog)
+  
+  跨平台的高性能 C++ 日志库，支持异步日志和多种输出方式。
+
+  **特点**：日志记录效率高，支持多种输出格式，适用于高并发环境。
+
+> [!TIP]
+> 除了 sfml，所有库都是本人自行源码编译构建。
