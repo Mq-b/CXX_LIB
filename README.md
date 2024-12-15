@@ -8,6 +8,8 @@
 
 Visual Studio 版本之间的 C++ 存在[二进制兼容性](https://learn.microsoft.com/zh-cn/cpp/porting/binary-compat-2015-2017?view=msvc-170)，自 Visual Studio 2015 到 2022。
 
+## 使用库
+
 引入库十分的简单，将仓库克隆到本地：
 
 ```shell
@@ -56,3 +58,13 @@ target_link_libraries(${PROJECT_NAME} PRIVATE GTest::GTest)
 ```
 
 有些库还需设置 `bin` 环境变量或者直接将 `dll` 复制过来，因为是动态链接库，这不是 CMake 管理的。
+
+## 相关库链接
+
+- [cpp-terminal](https://github.com/jupyter-xeus/cpp-terminal)  
+- [fmt](https://github.com/fmtlib/fmt)  
+- [GTest](https://github.com/google/googletest)  
+- [nlohmann_json](https://github.com/nlohmann/json)  
+- [oneTBB](https://github.com/oneapi-src/oneTBB)  
+- [sfml](https://github.com/SFML/SFML)  
+- [spdlog](https://github.com/gabime/spdlog)  
