@@ -8,6 +8,9 @@
 
 Visual Studio 版本之间的 C++ 存在[二进制兼容性](https://learn.microsoft.com/zh-cn/cpp/porting/binary-compat-2015-2017?view=msvc-170)，自 Visual Studio 2015 到 2022。
 
+>[!TIP]
+>如果你是纯萌新，参考：[**MSVC-setup.md**](./MSVC-setup.md)
+
 ## 使用库
 
 引入库十分的简单，将仓库克隆到本地：
