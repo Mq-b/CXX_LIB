@@ -11,7 +11,19 @@ Visual Studio 版本之间的 C++ 存在[二进制兼容性](https://learn.micro
 >[!TIP]
 >如果你是纯萌新，参考：[**MSVC-setup.md**](./MSVC-setup.md)
 
-## 使用库
+## 快速安装
+
+直接下载 [Setup-CXX_LIB](./Setup-CXX_LIB.ps1) 脚本然后执行，即可自动配置。
+
+windows 默认不开启执行脚本权限，需要以管理员身份运行 `Set-ExecutionPolicy RemoteSigned` 命令设置。
+
+为了考虑大多数人的环境是 windows 中国大陆区域，即 `chcp 936`，我们将脚本存储为 `gb2312` 的编码，以让大多数人能直接运行。如果你和我一样是全局 `utf-8` 记得修改脚本编码。
+
+
+## 普通安装
+
+>[!TIP]
+>如果你做了上一步快速安装，则无需看这一节。
 
 引入库十分的简单，将仓库克隆到本地：
 
@@ -38,6 +50,8 @@ D:/CXX_LIB
 ```
 
 做好这一步之后就可以直接在自己仓库随便的引入库了：
+
+## 在项目中引入库
 
 ```cmake
 find_package(SFML 2.6.1 COMPONENTS system window graphics audio network REQUIRED)
