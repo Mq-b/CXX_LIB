@@ -75,6 +75,9 @@ target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
 
 find_package(GTest REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE GTest::GTest)
+
+find_package(benchmark REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE benchmark::benchmark)
 ```
 
 有些库还需设置 `bin` 环境变量或者直接将 `dll` 复制过来，因为是动态链接库，这不是 CMake 管理的。
@@ -122,6 +125,12 @@ target_link_libraries(${PROJECT_NAME} PRIVATE GTest::GTest)
   跨平台的高性能 C++ 日志库，支持异步日志和多种输出方式。
 
   **特点**：日志记录效率高，支持多种输出格式，适用于高并发环境。
+
+- [**benchmark**](https://github.com/google/benchmark)
+
+  Google 提供的跨平台 C++ 性能测试库，用于测量代码的运行时间和性能。
+
+  **特点**：支持微基准测试，易于与 CMake 集成，支持自定义输入参数和多线程测试，广泛用于评估代码性能和优化效果。
 
 > [!TIP]
 > 除了 sfml，所有库都是本人自行源码编译构建。
