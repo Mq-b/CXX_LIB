@@ -9,7 +9,9 @@
 Visual Studio 版本之间的 C++ 存在[二进制兼容性](https://learn.microsoft.com/zh-cn/cpp/porting/binary-compat-2015-2017?view=msvc-170)，自 Visual Studio 2015 到 2022。
 
 >[!TIP]
->如果你是纯萌新，参考：[**MSVC-setup.md**](./MSVC-setup.md)
+> 说是说有二进制兼容，不过也别太指望我构建的库你一定能用，尤其其中还存在许多静态库，那则更是不可能，
+>
+>如果你是纯萌新还没有 Visual Studio，参考：[**MSVC-setup.md**](./MSVC-setup.md)
 
 ## 快速安装
 
