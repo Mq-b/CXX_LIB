@@ -35,6 +35,16 @@ cmake --install . --prefix "D:\CXX_LIB\benchmark" --config Debug
 
 其实复制过来也没用，CMake 查找不了，意思是如果你需要用 Debug 模式就把 Debug 中的库复制到 `benchmark\lib` 这个外层，就能正常查找了。
 
+---
+
+这种做法显然过度的愚蠢，我们通过修改 [`benchmarkTargets-debug.cmake`](../benchmark/lib/cmake/benchmark/benchmarkTargets-debug.cmake) 与 [`benchmarkTargets-release.cmake`](../benchmark/lib/cmake/benchmark/benchmarkTargets-release.cmake) 包文件，重新设置查找静态库的路径为：
+
+- [benchmark\lib\Debug](../benchmark/lib/Debug/)
+
+- [benchmark\lib\Release](../benchmark/lib/Release/)
+
+也得以智能的选择合适构建的库。
+
 ## 测试使用
 
 引入库：
