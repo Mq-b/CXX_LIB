@@ -80,6 +80,9 @@ target_link_libraries(${PROJECT_NAME} PRIVATE GTest::GTest)
 
 find_package(benchmark REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE benchmark::benchmark)
+
+find_package(absl REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE absl::strings absl::int128)
 ```
 
 有些库还需设置 `bin` 环境变量或者直接将 `dll` 复制过来，因为是动态链接库，这不是 CMake 管理的。
@@ -133,6 +136,12 @@ target_link_libraries(${PROJECT_NAME} PRIVATE benchmark::benchmark)
   Google 提供的跨平台 C++ 性能测试库，用于测量代码的运行时间和性能。
 
   **特点**：支持微基准测试，易于与 CMake 集成，支持自定义输入参数和多线程测试，广泛用于评估代码性能和优化效果。
+
+- [**absl**](https://github.com/abseil/abseil-cpp)
+
+  Google 提供的跨平台补充标准库的 C++ 库，涵盖基础设施、算法、容器、调试、哈希、内存管理、元编程、字符串操作、并发原语和时间管理等。
+
+  **特点**：现代 C++ 风格，性能高，稳定性强，广泛应用于 Google 内部代码，适用于各种 C++ 项目。
 
 > [!TIP]
 > 除了 sfml，所有库都是本人自行源码编译构建。
