@@ -95,53 +95,11 @@ target_link_libraries(${PROJECT_NAME} PRIVATE absl::strings absl::int128)
 
   **特点**：现代 C++ 风格，简单易用，适用于需要与终端交互的应用。
   
-- [**fmt**](https://github.com/fmtlib/fmt)
+- [**FTXUI**](https://github.com/ArthurSonzogni/FTXUI)
 
-  跨平台的现代高效的字符串格式化库。
-  
-  **特点**：支持类型安全的格式化，性能高，易于使用，广泛应用于 C++ 项目中。
+  用于构建跨平台终端用户界面的现代 C++ 库。
 
-- [**GTest**](https://github.com/google/googletest)
-
-  Google 提供的跨平台 C++ 测试框架，用于单元测试。
-
-  **特点**：简洁的 API，支持断言和 Mock 测试，广泛用于自动化测试。
-
-- [**nlohmann_json**](https://github.com/nlohmann/json)
-
-  现代的跨平台 C++ JSON 解析与序列化库。
-
-  **特点**：提供 STL 容器风格的接口，易于使用，支持完整的 JSON 操作。
-
-- [**TBB**](https://github.com/oneapi-src/oneTBB)
-
-  Intel 提供的跨平台并行编程库，帮助开发高性能多线程应用。
-
-  **特点**：支持任务调度、并行算法，适合多核计算和高性能计算应用。
-
-- [**sfml**](https://github.com/SFML/SFML)
-
-  用于 2D 图形、音频和窗口处理的跨平台多媒体库。
-
-  **特点**：易于使用，适合开发游戏或其他图形和多媒体应用。
-
-- [**spdlog**](https://github.com/gabime/spdlog)
-  
-  跨平台的高性能 C++ 日志库，支持异步日志和多种输出方式。
-
-  **特点**：日志记录效率高，支持多种输出格式，适用于高并发环境。
-
-- [**benchmark**](https://github.com/google/benchmark)
-
-  Google 提供的跨平台 C++ 性能测试库，用于测量代码的运行时间和性能。
-
-  **特点**：支持微基准测试，易于与 CMake 集成，支持自定义输入参数和多线程测试，广泛用于评估代码性能和优化效果。
-
-- [**absl**](https://github.com/abseil/abseil-cpp)
-
-  Google 提供的跨平台补充标准库的 C++ 库，涵盖基础设施、算法、容器、调试、哈希、内存管理、元编程、字符串操作、并发原语和时间管理等。
-
-  **特点**：现代 C++ 风格，性能高，稳定性强，广泛应用于 Google 内部代码，适用于各种 C++ 项目。
+  **特点**：提供丰富的控件和布局管理，支持动画和事件处理，适用于需要图形化终端界面的应用且无任何依赖。
 
 > [!TIP]
 > 除了 sfml，所有库都是本人自行源码编译构建。
