@@ -83,6 +83,9 @@ target_link_libraries(${PROJECT_NAME} PRIVATE benchmark::benchmark)
 
 find_package(absl REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE absl::strings absl::int128)
+
+find_package(ZXing REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE ZXing::ZXing)
 ```
 
 有些库还需设置 `bin` 环境变量或者直接将 `dll` 复制过来，因为是动态链接库，这不是 CMake 管理的。

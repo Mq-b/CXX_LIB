@@ -1,0 +1,176 @@
+{
+  "$schema": "https://raw.githubusercontent.com/spdx/spdx-spec/v2.2.1/schemas/spdx-schema.json",
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "documentNamespace": "https://spdx.org/spdxdocs/xlnt-x64-windows-1.5.0#4-0b84bea4-a21c-4008-adfa-8dffa9df87e0",
+  "name": "xlnt:x64-windows@1.5.0#4 fa7e8b53853b8a07bee983b785c574eb4ab33d62f5c07ae492d9b3a6bd326bbf",
+  "creationInfo": {
+    "creators": [
+      "Tool: vcpkg-2024-08-01-fd884a0d390d12783076341bd43d77c3a6a15658"
+    ],
+    "created": "2024-09-09T06:51:24Z"
+  },
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "GENERATES",
+      "relatedSpdxElement": "SPDXRef-binary"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-0"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-2"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-3"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-4"
+    },
+    {
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-2",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-3",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-4",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    }
+  ],
+  "packages": [
+    {
+      "name": "xlnt",
+      "SPDXID": "SPDXRef-port",
+      "versionInfo": "1.5.0#4",
+      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/xlnt",
+      "homepage": "https://github.com/tfussell/xlnt",
+      "licenseConcluded": "MIT OR BSD-3-Clause OR BSD-2-Clause OR LGPL-3.0-only OR BSL-1.0",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "description": "Cross-platform user-friendly xlsx library for C++14",
+      "comment": "This is the port (recipe) consumed by vcpkg."
+    },
+    {
+      "name": "xlnt:x64-windows",
+      "SPDXID": "SPDXRef-binary",
+      "versionInfo": "fa7e8b53853b8a07bee983b785c574eb4ab33d62f5c07ae492d9b3a6bd326bbf",
+      "downloadLocation": "NONE",
+      "licenseConcluded": "MIT OR BSD-3-Clause OR BSD-2-Clause OR LGPL-3.0-only OR BSL-1.0",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "comment": "This is a binary package built by vcpkg."
+    },
+    {
+      "SPDXID": "SPDXRef-resource-1",
+      "name": "tfussell/xlnt",
+      "downloadLocation": "git+https://github.com/tfussell/xlnt@568ac85346bc37757b0cd16464e7e1ea7656df91",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "414d691b372934326dc0da134eb7752c27c3223b6e92b433494d0758ca657f43b66894ad54ac97a8410387a2531a573c81572daa6a0434fa023e8e29ca74331c"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "fileName": "./D:/GitHub/vcpkg/ports/xlnt/fix-missing-include.patch",
+      "SPDXID": "SPDXRef-file-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2816d30627a24fcacf26a9266be05d6af79b77f1317d9a427e7f040bb13a9a1f"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./D:/GitHub/vcpkg/ports/xlnt/fix-not-found-include.patch",
+      "SPDXID": "SPDXRef-file-1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "a09c801e0ec6f427b2e2c7da9fe104e024171e9466c2da6a9a219d25ffd5ed6d"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./D:/GitHub/vcpkg/ports/xlnt/portfile.cmake",
+      "SPDXID": "SPDXRef-file-2",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f6c84c0c3387093b2049559b87c8234a6c7f067339fb68f5b600e8c8a2228672"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./D:/GitHub/vcpkg/ports/xlnt/static-linking-for-windows.patch",
+      "SPDXID": "SPDXRef-file-3",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "cafa0d924613439086af20e89eedaaafd5f8c91b606c8320e18eea30d76a41de"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./D:/GitHub/vcpkg/ports/xlnt/vcpkg.json",
+      "SPDXID": "SPDXRef-file-4",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "773d97b7375ba18c175a892d1bd8c4f7fed028ac38896272ab2c48ef4c9d0d05"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ]
+}

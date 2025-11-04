@@ -1,0 +1,8 @@
+Package: xlnt
+Version: 1.5.0
+Port-Version: 4
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: fa7e8b53853b8a07bee983b785c574eb4ab33d62f5c07ae492d9b3a6bd326bbf
+Description: Cross-platform user-friendly xlsx library for C++14
